@@ -47,3 +47,19 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+$(document).ready(function(){
+    $(".bt").click(function(){
+       var tx= $(this).html();
+	   $(this).html("شد");
+	   
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+    });
+});
+function alertDismissed() {
+    // do something
+}
