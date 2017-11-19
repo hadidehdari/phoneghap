@@ -63,16 +63,16 @@ navigator.notification.alert(
 	 var request = new XMLHttpRequest();
     request.open("GET", "http://www.rajanews.com/", true);
     request.onreadystatechange = function() {//Call a function when the state changes.
-        if (request.readyState == 4) {
-            if (request.status == 200 || request.status == 0) {
-                var tweets = JSON.parse(request.responseText);
-               
+          if (request.readyState == 4) {
+                if (request.status == 200 || request.status == 0) {
+              
+                    $(".tx").html(request.responseText);
                 }
-              $(".tx").html(request.responseText);
+         
             }
         }
-    }
-    console.log("asking for tweets");
+  
+   
 request.send();
 	//-------------------------------------
 });
